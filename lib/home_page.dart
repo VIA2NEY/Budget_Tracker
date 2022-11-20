@@ -4,6 +4,7 @@ import 'package:budget_tracker/top_card.dart';
 import 'package:budget_tracker/transactions.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:hive/hive.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({ Key? key }) : super(key: key);
@@ -20,7 +21,14 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     // Premier ouverture
-    db.loadData();
+
+    if (myBox.get("ListTransaction") == null ){
+      db.Firstenter();
+    } else {
+      db.loadData();
+    }
+
+    
 
     super.initState();
   }

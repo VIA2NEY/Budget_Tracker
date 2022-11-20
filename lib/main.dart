@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 
 import 'home_page.dart';
@@ -9,7 +10,7 @@ void main() async {
   await Hive.initFlutter();
 
   // 2 Ouvrir la box
-  var box = await Hive.box('mybox');
+  var box = await Hive.openBox('mybox');
 
   runApp(const MyApp());
 }
