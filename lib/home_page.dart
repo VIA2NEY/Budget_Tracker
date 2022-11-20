@@ -75,6 +75,7 @@ showDialog(
                         child: Form(
                           key: _formKey,
                           child: TextFormField(
+                            keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
                               hintText: 'Montant ',
